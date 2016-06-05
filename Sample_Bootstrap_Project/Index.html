@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> My Sample Bootstrap Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Angular Ladda/ladda.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/angular-material.min.css" rel="stylesheet" />
+    <link href="Angular Ladda/ladda.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Angular Material/angular-animate.min.js"></script>
+    <script src="Angular Material/angular-aria.min.js"></script>
+
+    <script src="Angular Material/angular-messages.min.js"></script>
+    <script src="Angular Material/angular-material.min.js"></script>
+
+    <script src="Angular Ladda/spin.js"></script>
+    <script src="Angular Ladda/ladda.min.js"></script>
+    <script src="Angular Ladda/angular-ladda.js"></script>
+
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="App/app.js"></script>
+    <script src="App/MyCtrl.js"></script>
+    <script src="App/Loginn/LoginnCtrl.js"></script>
+    <script src="App/Facility management/facilityCtrl.js"></script>
+
+    <script src="App/Home/homeCtrl.js"></script>
+    
+</head>
+<body ng-app="MyApp" ng-controller="MyCTRL" ng-cloak>
+    <header style="background-color:#cc99ff">
+        <div class="container">
+            <span class="label label-danger">My Learnig</span>
+            <button type="button" class="btn btn-default btn-sm pull-right" ng-click="Loginn()">
+                <span class="glyphicon glyphicon-log-in"></span> Logg In
+            </button>
+        </div>
+    </header>
+    
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">My Digilearn</a>
+            </div>
+            <ul class="nav navbar-nav">
+               
+                <li><a ui-sref="home">HOME</a></li>
+                <li><a ui-sref="facility">FACILITY</a></li>
+               
+            </ul>
+        </div>
+    </nav>
+    <div ui-view>
+        
+
+    </div>
+    
+</body>
+</html>

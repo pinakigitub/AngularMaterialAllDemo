@@ -1,0 +1,148 @@
+﻿
+<style>
+    .checkboxdemoSelectAll .demo-legend {
+        color: #3F51B5;
+    }
+
+    .checkboxdemoSelectAll .demo-fieldset {
+        border-style: solid;
+        border-width: 1px;
+        height: 100%;
+    }
+
+    .checkboxdemoSelectAll .demo-select-all-checkboxes {
+        padding-left: 30px;
+    }
+</style>
+<div class="container">
+    <form name="FacilityForm">
+        <div class="panel panel-primary">
+            <div class="panel-heading"> Create Facility</div>
+            <div class="panel-body">
+                <div layout="column" ng-cloak class="md-inline-form">
+
+
+
+                    <md-content layout-gt-sm="row" layout-padding>
+                        <div>
+                            <md-input-container>
+                                <label>Supplier Name:</label>
+                                <input required name="name" ng-model="user.name">
+                                <div ng-messages="FacilityForm.name.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>DOB:</label>
+
+                            </md-input-container>
+                            <md-datepicker ng-model="myDate" md-placeholder="Enter date"
+                                           md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                        </div>
+                    </md-content>
+                    <md-content layout-gt-sm="row" layout-padding>
+                        <div>
+                            <md-input-container>
+                                <label>Supplier Type:</label>
+
+                                <md-select ng-model="user.userState" ng-model-options="{trackBy: '$value.id'}">
+                                    <md-option ng-value="user.id" ng-repeat="user in typeList">{{ user.name }}</md-option>
+                                </md-select>
+                                {{user.userState}}
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Email:</label>
+                                <input ng-model="user.email" type="email" name="email"
+                                       minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                                <div ng-messages="FacilityForm.email.$error" role="alert">
+                                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                        Your email must be between 10 and 100 characters long and look like an e-mail address.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </md-content>
+                    <md-content layout-gt-sm="row" layout-padding>
+                        <div>
+                            <md-input-container>
+                                <label>Status:</label>
+                                <input ng-model="user.status">
+                                <md-radio-group ng-model="user.status">
+                                    <md-radio-button ng-value="true" class="md-primary">Active</md-radio-button>
+                                    <md-radio-button ng-value="false"> Banana </md-radio-button>
+                                </md-radio-group>
+                                {{user.status}}
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Class:</label>
+                                <div layout="row">
+                                    <md-checkbox ng-repeat="item in items" layout="row" ng-checked="exists(item.id ,selected)" ng-click="toggle(item.id, selected)"
+                                                 style="text-transform:capitalize"
+                                                 aria-label={{item.name}}>
+                                        &nbsp  {{item.name}}&nbsp
+                                    </md-checkbox>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </md-content>
+
+
+                    <md-content layout-gt-sm="row" layout-padding>
+                        <div>
+                            <md-input-container>
+                                <label>Dob:</label>
+                            </md-input-container>
+
+                        </div>
+                    </md-content>
+
+                    <md-content layout-gt-sm="row" layout-padding>
+                        <div>
+                            <md-input-container>
+                                <label>Hourly Rate (USD)</label>
+                                <input required type="number" step="any" name="rate" ng-model="project.rate" min="800"
+                                       max="4999" ng-pattern="/^1234$/" />
+                                <div ng-messages="FacilityForm.rate.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">
+                                        You've got to charge something! You can't just <b>give away</b> a Missile Defense
+                                        System.
+                                    </div>
+                                    <div ng-message="min">
+                                        You should charge at least $800 an hour. This job is a big deal... if you mess up,
+                                        everyone dies!
+                                    </div>
+                                    <div ng-message="pattern">
+                                        You should charge exactly $1,234.
+                                    </div>
+                                    <div ng-message="max">
+                                        {{projectForm.rate.$viewValue | currency:"$":0}} an hour? That's a little ridiculous. I
+                                        doubt even Bill Clinton could afford that.
+                                    </div>
+                                </div>
+                            </md-input-container>
+
+                        </div>
+                    </md-content>
+
+                </div>
+            </div>
+            <div class="panel-footer text-center">
+
+                <md-button class="md-raised md-primary" ng-click="Signin($event)">
+                    Sign in!
+                    <md-tooltip md-direction="left">
+                        {{pinaki}}
+                    </md-tooltip>
+                </md-button>
+                <button class="btn btn-danger ladda-button" ladda="loginLoading" ng-click="startLoading()" data-style="slide-left">
+                    Login
+                    <md-tooltip md-direction="top">
+                        {{pinaki}}
+                    </md-tooltip>
+                </button>
+            </div>
+        </div>
+    </form>
+
+
+</div>

@@ -1,0 +1,6 @@
+D:\Visual Studio 2013\Community 2013\Sample_Bootstrap_Project\Sample_Bootstrap_Project\bin\Sample_Bootstrap_Project.dll.config
+D:\Visual Studio 2013\Community 2013\Sample_Bootstrap_Project\Sample_Bootstrap_Project\bin\Sample_Bootstrap_Project.dll
+D:\Visual Studio 2013\Community 2013\Sample_Bootstrap_Project\Sample_Bootstrap_Project\bin\Sample_Bootstrap_Project.pdb
+D:\Visual Studio 2013\Community 2013\Sample_Bootstrap_Project\Sample_Bootstrap_Project\obj\Debug\Sample_Bootstrap_Project.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2013\Community 2013\Sample_Bootstrap_Project\Sample_Bootstrap_Project\obj\Debug\Sample_Bootstrap_Project.dll
+D:\Visual Studio 2013\Community 2013\Sample_Bootstrap_Project\Sample_Bootstrap_Project\obj\Debug\Sample_Bootstrap_Project.pdb
